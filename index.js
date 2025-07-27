@@ -16,6 +16,8 @@ const app = express();
 // Connect to MongoDB
 connectToDb();
 
+const port = process.env.PORT || 4000
+
 // Middleware
 app.use(express.json());
 
@@ -41,7 +43,6 @@ app.use('/api/orders', orderRoutes);
 
 
 // Start the server
-const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`✅ Server is running on port ${port}`);
 });
